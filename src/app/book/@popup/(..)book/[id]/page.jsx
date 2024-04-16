@@ -1,6 +1,13 @@
 import Popup from "@/components/Popup";
 import data from "@/utils/data";
 
+export async function getStaticPaths() {
+  const paths = data.map((book) => ({
+    params: { id: book.id.toString() },
+  }));
+  return { paths, fallback: true };
+}
+
 function BookPagePopup({ params }) {
   if (!params) return;
   const id = params.id;

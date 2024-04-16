@@ -1,23 +1,20 @@
-function AddNewBook() {
+function AddNew() {
   return (
     <>
-      <div className="overlay fadeIn"></div>
-      <div className="popup-container form-container slideIn">
-        <div className="add-new-container">
-          <form action="submit">
-            <label htmlFor="title">title :</label>
-            <input type="text" />
-            <label htmlFor="category">category :</label>
-            <input type="text" />
-            <label htmlFor="price">price :</label>
-            <input type="text" />
-            <label htmlFor="description">description :</label>
-            <textarea type="text" />
-          </form>
-        </div>
+      <div className="add-new-container">
+        <form action="submit">
+          <label htmlFor="title">title :</label>
+          <input type="text" />
+          <label htmlFor="category">category :</label>
+          <input type="text" />
+          <label htmlFor="price">price :</label>
+          <input type="number" />
+          <label htmlFor="description">description :</label>
+          <textarea type="text" />
+        </form>
       </div>
     </>
   );
 }
 
-export default AddNewBook;
+export default AddNew;
