@@ -1,5 +1,12 @@
+"use client";
+import { useDispatch } from "react-redux";
+import { deleteBook } from "@/lib/booklist/bookSlice";
 import Link from "next/link";
 function Book({ data }) {
+  const dispatch = useDispatch();
+  function deleteHandler(id) {
+    dispatch(deleteBook(id));
+  }
   return (
     <>
       <div className="book-container">
@@ -8,7 +15,12 @@ function Book({ data }) {
         </Link>
         <span className="category">{data.category}</span>
         <p className="price">${data.price}</p>
-        <button>❌</button>
+        <button
+          className="book-delete-button"
+          onClick={() => deleteHandler(data.id)}
+        >
+          ❌
+        </button>
       </div>
     </>
   );

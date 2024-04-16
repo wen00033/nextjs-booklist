@@ -55,16 +55,49 @@
 }
 
 .book-detail-container {
+  position: relative;
+  width: 50vw;
   box-shadow: 1px 1px 2px black;
   padding: 2rem;
   border-radius: 2rem;
   background-color: $tertiary;
-  display: grid;
   gap: 1rem;
   justify-content: center;
   align-items: center;
-  h1 {
-    font-size: 3rem;
-    text-align: center;
+  label {
+    text-transform: uppercase;
+    font-size: $paragraphFontSize;
+    &::after {
+      content: ":";
+    }
   }
+}
+
+.book-detail-container-form {
+  width: 100%;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+}
+.close-button {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  font-size: 3rem;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+
+.close-button:hover {
+  transform: scale(1.2);
+  text-shadow: 1px 1px 5px black;
+}
+
+.book-delete-button {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.book-delete-button:hover {
+  transform: scale(1.2);
+  box-shadow: 1px 1px 5px black;
 }

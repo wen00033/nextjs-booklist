@@ -1,27 +1,67 @@
+"use client";
 import Popup from "@/components/Popup";
-import data from "@/utils/data";
-
-export async function getStaticPaths() {
-  const paths = data.map((book) => ({
-    params: { id: book.id.toString() },
-  }));
-  return { paths, fallback: true };
-}
+import { useSelector, useDispatch } from "react-redux";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { updateBook } from "@/lib/booklist/bookSlice";
 
 function BookPagePopup({ params }) {
+  const dispatch = useDispatch();
+  const bookList = useSelector((state) => state.bookList.book);
   if (!params) return;
   const id = params.id;
-  const book = data.find((book) => book.id === +id);
+  const book = bookList.find((book) => book.id == id);
+  const router = useRouter();
+  const [bookDetail, setBookDetail] = useState(book);
+
+  function leaveHandler() {
+    router.back();
+  }
+  function HandleChange(e) {
+    setBookDetail({ ...bookDetail, [e.target.name]: e.target.value });
+  }
+
+  function HandleSubmit() {
+    dispatch(updateBook(bookDetail));
+    router.back(); // router.back();
+  }
+
   return (
     <Popup>
       <div className="book-detail-container">
-        <h1>{book.book_name}</h1>
-        <span className="category">{book.category}</span>
-        <p className="price">Price: ${book.price}</p>
-        <dl>
-          <dt>Description:</dt>
-          <dd>{book.description}</dd>
-        </dl>
+        <span onClick={leaveHandler} className="close-button">
+          ❌
+        </span>
+        <form className="book-detail-container-form">
+          <label htmlFor="title">title</label>
+          <input
+            name="book_name"
+            type="text"
+            onChange={HandleChange}
+            value={bookDetail.book_name}
+          />
+          <label htmlFor="category">category</label>
+          <input
+            type="text"
+            name="category"
+            onChange={HandleChange}
+            value={bookDetail.category}
+          />
+          <label htmlFor="price">price</label>
+          <input
+            type="number"
+            name="price"
+            onChange={HandleChange}
+            value={bookDetail.price}
+          />
+          <label htmlFor="description">description</label>
+          <textarea
+            name="description"
+            onChange={HandleChange}
+            value={bookDetail.description}
+          />
+        </form>
+        <button onClick={HandleSubmit}>Modify this book🫡</button>
       </div>
     </Popup>
   );

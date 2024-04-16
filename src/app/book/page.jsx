@@ -1,13 +1,12 @@
 "use client";
-
-import books from "../../utils/data";
+import { useSelector } from "react-redux";
 import Book from "@/components/Book";
-
 function BookPage() {
+  const bookList = useSelector((state) => state.bookList.book);
   return (
     <div>
       <ul className="list-book-container">
-        {books.map((book) => (
+        {bookList.map((book) => (
           <Book key={book.id} data={book} />
         ))}
       </ul>
