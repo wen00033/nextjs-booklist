@@ -1,0 +1,70 @@
+.list-book-container {
+  display: grid;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-container {
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 5px rgb(115, 115, 115);
+  border-radius: 2rem;
+  background-color: $quaternary;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  button {
+    border: none;
+    background-color: $primary;
+    padding: 1rem;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px rgb(115, 115, 115);
+  }
+}
+
+.book-container > * {
+  width: fit-content;
+  align-self: center;
+  justify-self: center;
+}
+
+.category {
+  width: fit-content;
+  font-size: 1.5rem;
+  background-color: black;
+  border-radius: 10rem;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  color: $fontSecondary;
+}
+
+.price {
+  font-size: 1.6rem;
+}
+
+// ==========Book Layout-Header styling====================
+.book-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a {
+    text-transform: uppercase;
+  }
+}
+
+.book-detail-container {
+  box-shadow: 1px 1px 2px black;
+  padding: 2rem;
+  border-radius: 2rem;
+  background-color: $tertiary;
+  display: grid;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+  }
+}

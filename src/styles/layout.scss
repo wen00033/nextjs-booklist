@@ -1,0 +1,53 @@
+// Element setup
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: $primary;
+  font-size: $linkFontSize;
+  padding: 2rem;
+  padding-inline: $bleeding;
+}
+main {
+  background-color: $secondary;
+  display: grid;
+  flex-grow: 1;
+  padding-inline: $bleeding;
+  padding-block: 2rem;
+}
+
+.wrapper {
+  margin: auto;
+}
+
+footer {
+  background-color: $tertiary;
+  font-size: $paragraphFontSize;
+  padding-inline: $bleeding;
+  text-align: center;
+  padding: 2rem;
+}
+
+.title {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 2rem;
+}
+
+p,
+dt,
+dd {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+a {
+  color: $fontPrimary;
+}

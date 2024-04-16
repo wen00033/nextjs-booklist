@@ -1,0 +1,13 @@
+.add-new-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  gap: 1.5rem;
+  font-size: $paragraphFontSize;
+  text-transform: uppercase;
+}
+
+.form-container {
+  width: 50%;
+}
