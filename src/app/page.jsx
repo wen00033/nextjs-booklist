@@ -1,7 +1,7 @@
 function Home() {
   return (
     <div>
-      <h1>Welcome to Benjamin's page</h1>
+      <h1>Welcome to My Homepage🎉🎉🎉🎉</h1>
       <ul className="homepage">
         <li>
           1. It should be a single page with book details, the main page should
@@ -10,7 +10,7 @@ function Home() {
           top so the user can add a book.
         </li>
         <code>
-          Book list load from data.js array, add into redux store. export
+          Booklist load from data.js array, add into redux store. export
           deleteBook function to filter out selected book.
         </code>
         <li>
@@ -18,8 +18,8 @@ function Home() {
           the user add a book ( name, price, category and description ).
         </li>
         <code>
-          Popup up page achieve by using next.js Parallel route with
-          Intercepting routes together. Finally use conditional render addNew
+          Popup-up page achieve by using next.js Parallel route with
+          Intercepting routes together. Finally, use conditional render addNew
           page in Layout.
         </code>
         <li>

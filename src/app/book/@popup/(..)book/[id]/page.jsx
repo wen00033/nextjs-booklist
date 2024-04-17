@@ -6,13 +6,13 @@ import { useState } from "react";
 import { updateBook } from "@/lib/booklist/bookSlice";
 
 function BookPagePopup({ params }) {
+  const [bookDetail, setBookDetail] = useState(book);
+  const router = useRouter();
   const dispatch = useDispatch();
   const bookList = useSelector((state) => state.bookList.book);
   if (!params) return;
   const id = params.id;
   const book = bookList.find((book) => book.id == id);
-  const router = useRouter();
-  const [bookDetail, setBookDetail] = useState(book);
 
   function leaveHandler() {
     router.back();
